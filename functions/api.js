@@ -19,11 +19,19 @@ const init = async () => {
     return server;
 };
 
-const server = init();
+let cachedServer;
+
+const getServer = async () => {
+    if (!cachedServer) {
+        cachedServer = await init();
+    }
+    return cachedServer;
+};
 
 const handler = async (event, context) => {
-    const hapiServer = await server;
-    const { req, res } = hapiServer.listener.createRequest(event, context);
+    const hapiServer = await getServer();
+
+    const { req, res } = hapiServer.listener._start(event, context);
 
     return new Promise((resolve, reject) => {
         res.on('finish', () => {
