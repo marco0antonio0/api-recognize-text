@@ -1,6 +1,6 @@
-import express from "express";
-import serverless from "serverless-http";
-import { AppModule } from "../../app/app.module";
+import express from 'express';
+import serverless from 'serverless-http';
+import { AppModule } from '../../app/app.module';
 
 const api = express();
 
