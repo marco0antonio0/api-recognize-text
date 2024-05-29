@@ -4,7 +4,7 @@ const serverless = require('serverless-http');
 const app = express();
 
 // Defina suas rotas de API aqui
-app.get('/api/heollo', (req, res) => {
+app.get('/hello', (req, res) => {
     res.json({ message: 'Hello from Express.js!' });
 });
 
