@@ -1,0 +1,17 @@
+  <!-- ========================================================= -->
+[functions]
+  <!-- declara o pacote externo necessario para usar no servidor -->
+  external_node_modules = ["express"]
+  <!-- empacotador de funções netlify -->
+  node_bundler = "esbuild"
+  <!-- ========================================================= -->
+[[redirects]]
+  <!-- Redireciona as rotas para /api/ * -->
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
+  <!-- ========================================================= -->
+[build]
+    <!-- Builda a função para registro de logs no netlify -->
+  command = "echo Building Functions"
