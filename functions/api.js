@@ -1,6 +1,5 @@
-// functions/api.js
 const Koa = require('koa');
-const serverless = require('@netlify/functions');
+const { builder } = require('@netlify/functions');
 const Router = require('@koa/router');
 
 const app = new Koa();
@@ -12,4 +11,4 @@ router.get('/api', (ctx) => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-module.exports.handler = serverless.createHandler(app);
+module.exports.handler = builder(app.callback());
