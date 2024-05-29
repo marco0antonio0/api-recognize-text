@@ -1,16 +1,6 @@
 {
-  "name": "api_gen_atas_academicas",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@hapi/hapi": "^21.3.9",
-    "@netlify/functions": "^2.7.0"
+    "@netlify/functions": "^2.7.0",
+    "express": "^4.19.2"
   }
 }
